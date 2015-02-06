@@ -34,6 +34,6 @@ class calculator {
     }
 }
 
-let c = calculator(num1: 20, num2: 2, type: 4)  // 1 = Add, 2 = Delete, 3 = Mul, 4 = Div, 5 = Mod
+let c = calculator(num1: 20, num2: 2, type: 1)  // 1 = Add, 2 = Delete, 3 = Mul, 4 = Div, 5 = Mod
 c.calc()
 

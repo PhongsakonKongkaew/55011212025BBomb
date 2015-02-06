@@ -9,6 +9,7 @@ class food_animal{
     }
     
     ////////////////// Dictionary ////////////////////
+    
     let key_animal:String
     var animal_food: Dictionary<String,String> = ["Ant":"Sugar","Bat":"Fruit","Cat":"Fish","Dog":"Broke"]
 
@@ -21,6 +22,7 @@ class food_animal{
                 break;
             }
         }
+        
         if(resultF==""){
             println("Not have Animal")
             resultF = "Not have Animal"
@@ -45,6 +47,7 @@ class food_animal{
                 break
             }
         }
+        
         if(resultF2==""){
             resultF2 = "Not have Animal eat food"
             println("Not have Animal eat food")
@@ -56,7 +59,7 @@ class food_animal{
     }
 }
 
-let f_a = food_animal(key_animal: "Ant") // ใส่ชื่ิอ สัตว์ที่ต้องการ
+let f_a = food_animal(key_animal: "A") // ใส่ชื่ิอ สัตว์ที่ต้องการ
 
 // Dictionary
 f_a.show_food()

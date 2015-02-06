@@ -55,7 +55,7 @@ class login {
     }*/
 }
 
-let test = login(user:"Phongsakorn",passwd:"12345689",typeKey:4)
+let test = login(user:"PhongsakornAAA",passwd:"1234",typeKey:3)
 // typeKey = 1 -> login , 2 -> Add , 3 -> Delete , 4 -> Update
 test.Check()
 

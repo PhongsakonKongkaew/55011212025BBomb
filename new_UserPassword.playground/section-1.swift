@@ -14,7 +14,8 @@ class UserPassword{
     
     func option_Check() ->String{
         
-        var resultU : String = ""
+        var resultU : String
+        resultU = ""
         
         if(type==1){
             // login
