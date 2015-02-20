@@ -31,7 +31,7 @@ class TipCalculatorModel {
     
     func returnPossibleTips() -> [Int : (tipAmt:Double, total : Double)] {
         let possibleTipsInferred = [0.15, 0.18, 0.20]
-        let posssibleTipsExplicit:[Double] = [0.15, 0.18, 0.20]
+        let possibleTipsExplicit:[Double] = [0.15, 0.18, 0.20]
         
         var retval = Dictionary<Int,(tipAmt:Double,total:Double)>()
         for possibleTip in possibleTipsInferred {

@@ -16,6 +16,18 @@ class ViewController: UIViewController,UITableViewDelegate{
     var possibleTips = Dictionary<Int,(tipAmt:Double,total:Double)>()
     var sortedKeys:[Int] = []
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        refreshUI()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
         return sortedKeys.count
     }
@@ -43,20 +55,10 @@ class ViewController: UIViewController,UITableViewDelegate{
     
     
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        refreshUI()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+   
     func refreshUI(){
         totalTextField.text = String(format: "%0.2f", tipCalc.total)
-        taxPctSlider.value = Float(tipCalc.taxPct)*100
+        taxPctSlider.value = Float(tipCalc.taxPct)*100.0
         taxPctLabel.text = "Tax Percentage (\(Int(taxPctSlider.value))%)"
     }    
     
