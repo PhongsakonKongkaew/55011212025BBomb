@@ -13,6 +13,8 @@
 		FDA07CD51A97114A00B6632B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDA07CD41A97114A00B6632B /* Images.xcassets */; };
 		FDA07CD81A97114A00B6632B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDA07CD61A97114A00B6632B /* LaunchScreen.xib */; };
 		FDA07CE41A97114A00B6632B /* CoreImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA07CE31A97114A00B6632B /* CoreImageViewTests.swift */; };
+		FDAEC2D81AA064A0001662DF /* dota2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FDAEC2D71AA064A0001662DF /* dota2.jpg */; };
+		FDAEC2DA1AA0659D001662DF /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = FDAEC2D91AA0659D001662DF /* image.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		FDA07CDD1A97114A00B6632B /* CoreImageViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreImageViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDA07CE21A97114A00B6632B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDA07CE31A97114A00B6632B /* CoreImageViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreImageViewTests.swift; sourceTree = "<group>"; };
+		FDAEC2D71AA064A0001662DF /* dota2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dota2.jpg; sourceTree = "<group>"; };
+		FDAEC2D91AA0659D001662DF /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 		FDA07CCB1A97114A00B6632B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FDAEC2D91AA0659D001662DF /* image.png */,
+				FDAEC2D71AA064A0001662DF /* dota2.jpg */,
 				FDA07CCC1A97114A00B6632B /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -194,7 +200,9 @@
 			files = (
 				FDA07CD31A97114A00B6632B /* Main.storyboard in Resources */,
 				FDA07CD81A97114A00B6632B /* LaunchScreen.xib in Resources */,
+				FDAEC2D81AA064A0001662DF /* dota2.jpg in Resources */,
 				FDA07CD51A97114A00B6632B /* Images.xcassets in Resources */,
+				FDAEC2DA1AA0659D001662DF /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +413,7 @@
 				FDA07CE91A97114A00B6632B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FDA07CEA1A97114A00B6632B /* Build configuration list for PBXNativeTarget "CoreImageViewTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +422,7 @@
 				FDA07CEC1A97114A00B6632B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

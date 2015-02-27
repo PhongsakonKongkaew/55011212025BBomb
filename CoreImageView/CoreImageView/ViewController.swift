@@ -9,11 +9,12 @@
 import UIKit
 import AssetsLibrary
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
 
     
     @IBOutlet weak var UIImageCiew: UIImageView!
-    
+    @IBOutlet weak var amountSlider: UISlider!
+     
     var context:CIContext!
     var filter: CIFilter!
     var beginImage: CIImage!
@@ -40,11 +41,44 @@ class ViewController: UIViewController {
         let cgimg = context.createCGImage(outputImage, fromRect: outputImage.extent())
         
         // 2
-        let newImage = UIImage(CGImage: cgimg!)
-        self.imageView.image = newImage
+        let newImage = UIImage(CGImage: cgimg)
+        self.UIImageCiew.image = newImage
         
         self.logAllfilters()
         
+    }
+    
+    @IBAction func loadPhoto(sender: AnyObject) {
+        let pickerC = UIImagePickerController()
+        pickerC.delegate = self
+        self.presentViewController(pickerC, animated: true, completion: nil)
+    }
+    
+    @IBAction func savePhoto(sender: AnyObject) {
+        // 1
+        let imageToSave = filter.outputImage
+        
+        // 2
+        let softwareContext = CIContext(options: [kCIContextUseSoftwareRenderer:true])
+        
+        // 3
+        let cgimg = softwareContext.createCGImage(imageToSave, fromRect: imageToSave.extent())
+        
+        // 4
+        let library = ALAssetsLibrary()
+        library.writeImageToSavedPhotosAlbum(cgimg, metadata: imageToSave.properties(), completionBlock: nil)
+        
+    }
+    
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: NSDictionary!) {
+        self.dismissViewControllerAnimated(true, completion: nil);
+        
+        let gotImage = info[UIImagePickerControllerOriginalImage] as UIImage
+        
+        beginImage = CIImage(image: gotImage)
+        orientation = gotImage.imageOrientation
+        filter.setValue(beginImage, forKey: kCIInputImageKey)
+        self.amountSliderValueChanged(amountSlider)
         
     }
 
@@ -63,6 +97,7 @@ class ViewController: UIViewController {
         }
     }
     
+    
     func oldPhoto(img:CIImage, withAmount intensity:Float) -> CIImage{
         // 1
         let sepia = CIFilter(name: "CISepiaTone")
@@ -75,7 +110,7 @@ class ViewController: UIViewController {
         // 3
         let lighten = CIFilter(name: "CIColorControls")
         lighten.setValue(random.outputImage, forKey:  kCIInputImageKey)
-        lighten.setValue(1-intensity, forKey: "inputBrightness")
+        lighten.setValue(1 - intensity, forKey: "inputBrightness")
         lighten.setValue(0, forKey: "inputSaturation")
         
         
@@ -84,8 +119,29 @@ class ViewController: UIViewController {
         
         // 5 
         let composite = CIFilter(name: "CIHardLightBlendMode")
+        composite.setValue(composite.outputImage, forKey: kCIInputImageKey)
+        composite.setValue(croppedImage, forKey: kCIInputBackgroundImageKey)
+        
+        // 6 
+        let vignette = CIFilter(name: "CIVignette")
+        vignette.setValue(composite.outputImage, forKey: kCIInputImageKey)
+        vignette.setValue(intensity * 2, forKey: "inputIntensity")
+        vignette.setValue(intensity * 30, forKey: "inputRadius")
+        
+        // 7
+        return vignette.outputImage
     }
-
-
+    
+    @IBAction func amountSliderValueChanged(sender: UISlider) {
+        let sliderValue = sender.value
+        
+        let outputImage = self.oldPhoto(beginImage, withAmount: sliderValue)
+        
+        let cgimg = context.createCGImage(outputImage, fromRect: outputImage.extent())
+        
+        let newImage = UIImage(CGImage: cgimg, scale: 1, orientation: orientation)
+        self.UIImageCiew.image = newImage
+    }
+    
 }
 
