@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ColorTwoViewControllerDelegate{
-    func myVCDidFinish(controller:ColorTwoViewController,text:String)
+    func myVCDidFinish(controller:ColorTwoViewController,text:String,s:UIColor)
 }
 class ColorTwoViewController: UIViewController {
 
@@ -22,7 +22,7 @@ class ColorTwoViewController: UIViewController {
     
     @IBAction func saveColor(sender: UIBarButtonItem) {
         if(delegate != nil){
-            delegate!.myVCDidFinish(self, text: colorLabel!.text!)
+            delegate!.myVCDidFinish(self, text: colorLabel!.text!,s:UIColor.blueColor())
         }
     }
     

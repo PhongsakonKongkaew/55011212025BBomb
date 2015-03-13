@@ -17,7 +17,7 @@ class ViewController: UIViewController,ColorTwoViewControllerDelegate{
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    func myVCDidFinish(controller: ColorTwoViewController, text: String) {
+    func myVCDidFinish(controller: ColorTwoViewController, text: String,s:UIColor) {
         colorLabel.text = "CO : " + text
         controller.navigationController?.popViewControllerAnimated(true)
     }
@@ -26,6 +26,7 @@ class ViewController: UIViewController,ColorTwoViewControllerDelegate{
         if segue.identifier == "mySeque"{
             let vc = segue.destinationViewController as ColorTwoViewController
             vc.colorString = colorLabel.text!
+            
             vc.delegate = self
         }
     }

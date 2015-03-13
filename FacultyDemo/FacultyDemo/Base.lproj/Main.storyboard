@@ -101,17 +101,26 @@
                             <imageView userInteractionEnabled="NO" alpha="0.64999999999999969" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="wst-FQ-k8e">
                                 <rect key="frame" x="-37" y="-91" width="448" height="784"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ประวัติความเป็นมาของคณะวิทยาการสารสนเทศ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqX-Gk-Qf4">
-                                <rect key="frame" x="25" y="98" width="339" height="31"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.21971815592661426" blue="0.076597177039713693" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgF-uB-pLG">
-                                <rect key="frame" x="39" y="98" width="325" height="406"/>
-                                <mutableString key="text">คณะวิทยาการสารสนเทศ   มหาวิทยาลัยมหาสารคาม  เป็นหน่วยงานในสถาบันอุดมศึกษาของรัฐ  ที่ได้ดำเนินงานตามพันธกิจ และภาระหน้าที่ของสถาบันอุดมศึกษา  ตั้งแต่ช่วงเริ่มแรกก่อตั้งขึ้น โดยใช้ชื่อว่า“โครงการจัดตั้งคณะวิทยาการสารสนเทศ” ต่อมาเมื่อวันที่ 24 เมษายน 2546  ได้มีมติจากกรรมการสภามหาวิทยาลัย ในการประชุมครั้งที่ 4/2546  อนุมัติให้โครงการจัดตั้งคณะวิทยาการสารสนเทศ เปลี่ยนสถานะเป็น  “คณะวิทยาการสารสนเทศ”  เป็นคณะนอกระบบราชการ สังกัดมหาวิทยาลัยมหาสารคาม</mutableString>
+                                <rect key="frame" x="45" y="126" width="325" height="406"/>
+                                <string key="text">คณะวิทยาการสารสนเทศ   มหาวิทยาลัยมหาสารคาม  เป็นหน่วยงานในสถาบันอุดมศึกษาของรัฐ  ที่ได้ดำเนินงานตามพันธกิจ และภาระหน้าที่ของสถาบันอุดมศึกษา  ตั้งแต่ช่วงเริ่มแรกก่อตั้งขึ้น โดยใช้ชื่อว่า“โครงการจัดตั้งคณะวิทยาการสารสนเทศ” ต่อมาเมื่อวันที่ 24 เมษายน 2546  ได้มีมติจากกรรมการสภามหาวิทยาลัย ในการประชุมครั้งที่ 4/2546  อนุมัติให้โครงการจัดตั้งคณะวิทยาการสารสนเทศ เปลี่ยนสถานะเป็น  “คณะวิทยาการสารสนเทศ”  เป็นคณะนอกระบบราชการ สังกัดมหาวิทยาลัยมหาสารคาม</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.088407215146753981" green="0.066323542343310948" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pz2-5I-jEq">
+                                <rect key="frame" x="170" y="531" width="46" height="30"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="GzO-WQ-jg6" kind="show" id="NWP-bE-ktv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ประวัติความเป็นมาของคณะวิทยาการสารสนเทศ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqX-Gk-Qf4">
+                                <rect key="frame" x="31" y="126" width="339" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.21971815592661426" blue="0.076597177039713693" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -122,6 +131,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCN-hL-oH5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1666.5" y="428.5"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="KXH-J2-cCD">
+            <objects>
+                <tableViewController id="GzO-WQ-jg6" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="BTG-Ci-10J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Vba-Wb-Zza">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vba-Wb-Zza" id="U3b-p9-bX9">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GzO-WQ-jg6" id="GrS-ea-RrZ"/>
+                            <outlet property="delegate" destination="GzO-WQ-jg6" id="wL8-nt-nVd"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pl1-tq-rAP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2121.5" y="420.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9o8-i9-jOe">
