@@ -111,6 +111,26 @@ class ViewController: UIViewController,UITableViewDataSource {
         cell.textLabel!.text = item.valueForKey("name") as String?
         return cell
     }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            //1
+            let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+            let managedContext = appDelegate.managedObjectContext!
+            
+            // Find the LogItem object the user is trying to delete
+            let logItemToDelete = items[indexPath.row]
+            
+            // Delete it from the managedObjectContext
+           managedContext.deleteObject(logItemToDelete)
+            
+            // Refresh the table view to indicate that it's deleted
+            self.reloadInputViews()
+            
+            items.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+    }
 
 
 }
