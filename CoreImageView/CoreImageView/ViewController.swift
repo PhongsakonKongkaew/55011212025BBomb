@@ -67,6 +67,7 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
         // 4
         let library = ALAssetsLibrary()
         library.writeImageToSavedPhotosAlbum(cgimg, metadata: imageToSave.properties(), completionBlock: nil)
+
         
     }
     
@@ -99,37 +100,35 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
     
     
     func oldPhoto(img:CIImage, withAmount intensity:Float) -> CIImage{
-        // 1
-        let sepia = CIFilter(name: "CISepiaTone")
+        
+        //1
+        let sepia = CIFilter(name:"CISepiaTone")
         sepia.setValue(img, forKey: kCIInputImageKey)
         sepia.setValue(intensity, forKey: "inputIntensity")
+        //2
+        let random = CIFilter(name:"CIRandomGenerator")
         
-        // 2
-        let random = CIFilter(name: "CIRandomGenerator")
-        
-        // 3
-        let lighten = CIFilter(name: "CIColorControls")
-        lighten.setValue(random.outputImage, forKey:  kCIInputImageKey)
+        //3
+        let lighten = CIFilter(name:"CIColorControls")
+        lighten.setValue(random.outputImage, forKey: kCIInputImageKey)
         lighten.setValue(1 - intensity, forKey: "inputBrightness")
         lighten.setValue(0, forKey: "inputSaturation")
         
-        
-        // 4 
+        //4
         let croppedImage = lighten.outputImage.imageByCroppingToRect(beginImage.extent())
-        
-        // 5 
-        let composite = CIFilter(name: "CIHardLightBlendMode")
-        composite.setValue(composite.outputImage, forKey: kCIInputImageKey)
+        //5
+        let composite = CIFilter(name:"CIHardLightBlendMode")
+        composite.setValue(sepia.outputImage, forKey: kCIInputImageKey)
         composite.setValue(croppedImage, forKey: kCIInputBackgroundImageKey)
         
-        // 6 
+        //6
         let vignette = CIFilter(name: "CIVignette")
         vignette.setValue(composite.outputImage, forKey: kCIInputImageKey)
         vignette.setValue(intensity * 2, forKey: "inputIntensity")
         vignette.setValue(intensity * 30, forKey: "inputRadius")
-        
-        // 7
+        //7
         return vignette.outputImage
+        
     }
     
     @IBAction func amountSliderValueChanged(sender: UISlider) {
